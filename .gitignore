@@ -64,4 +64,12 @@ __pycache__/
 .pytest_cache/
 
 # Script output/logs (if any)
-scripts/*.log 
+scripts/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env*
+frontend/.eslintcache
+frontend/coverage/
+# Add other frontend ignores as needed (e.g., specific IDE files) 
