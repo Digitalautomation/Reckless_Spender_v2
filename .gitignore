@@ -24,10 +24,13 @@ wheels/
 venv/
 env/
 ENV/
+.venv/
+virtualenv/
 
 # IDE
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 
@@ -54,4 +57,11 @@ htmlcov/
 .coverage.*
 .cache
 coverage.xml
-*.cover 
+*.cover
+
+# Python cache
+__pycache__/
+.pytest_cache/
+
+# Script output/logs (if any)
+scripts/*.log 
