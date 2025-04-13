@@ -36,4 +36,19 @@ class Transaction(TransactionBase):
     reconciled: bool
     tags: Optional[List[str]] = None
     notes: Optional[str] = None
-    model_config = ConfigDict(from_attributes=True) 
+    model_config = ConfigDict(from_attributes=True)
+
+class TransactionFilterParams(BaseModel):
+    start_date: Optional[date] = None
+    end_date: Optional[date] = None
+    account_id: Optional[int] = None
+    category_id: Optional[int] = None
+    reconciled: Optional[bool] = None
+    # Future: Add pagination (skip, limit), sorting (sort_by, order)
+
+class TransactionUpdate(BaseModel):
+    category_id: Optional[int] = None
+    reconciled: Optional[bool] = None
+    tags: Optional[List[str]] = None
+    notes: Optional[str] = None
+    # Ensure amount/date/account_id etc. are not updatable via this model 

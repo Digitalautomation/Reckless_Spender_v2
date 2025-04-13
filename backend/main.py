@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import upload # Import the upload router
+from routes import upload, transactions, categories # Import routers
 
 app = FastAPI(
     title="Reckless Spender API",
@@ -20,6 +20,8 @@ app.add_middleware(
 
 # Include routers
 app.include_router(upload.router)
+app.include_router(transactions.router)
+app.include_router(categories.router)
 
 @app.get("/")
 async def root():
